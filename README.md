@@ -23,15 +23,14 @@ CSS を実装する。
 
 # STEP4
 
-pokeAPI からデータを fetch
-全てのポケモンのデータを取得
-
-useEffect() を使用
+pokeAPI からデータを fetch()で取得
+useEffect() を使用する
+console.log で取得したデータを確認
 
 # STEP5
 
-pokeAPI からデータを fetch
-各ポケモンのデータを取得
+pokeAPI から fetch()で取得したデータを
+画面に表示させる
 
 # STEP6
 
