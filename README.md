@@ -1,46 +1,46 @@
 # pokemon-app
 
-# STEP1
+# STEP0 環境構築
 
 create-react-app で環境構築！
 
-# STEP2
+# STEP1
 
 コンポーネントを作ろう！
 `<PokemonThumbnails/>`コンポーネントを作る
 
-# STEP3
+# STEP2
 
 子コンポーネントに props を渡そう！
 `<App>` コンポーネントから`<PokemonThumbnails>`コンポーネントに props でデータを渡す
 渡すデータは、この段階では固定値で渡す
 
-# STEP4
+# STEP3
 
 子コンポーネントを実装する。
 `<PokemonThumbnails>`コンポーネントの中身を実装する
 
-# STEP5
+# STEP4
 
 pokeAPI からデータを fetch
 全てのポケモンのデータを取得
 
 useEffect() を使用
 
-# STEP6
+# STEP5
 
 pokeAPI からデータを fetch
 各ポケモンのデータを取得
 
-# STEP7
+# STEP6
 
 API から取得したデータで、state を更新する
 useState()を使用
 
-# STEP8
+# STEP7
 
 「もっと見る」ボタンの追加
 
-# STEP9
+# STEP8
 
 loading 画面の追加
