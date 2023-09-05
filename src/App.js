@@ -29,37 +29,35 @@ function App() {
   // APIからデータを取得する
   // パラメータにlimitを設定し、20件取得する
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
-  // 仮でフシギダネのURLを使用する
-  const pokemonUrl = "https://pokeapi.co/api/v2/pokemon/bulbasaur"
 
   const getAllPokemons = () => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data.results)
         setAllPokemons(data.results);
 
+        createPokemonObject(data.results);
         // 次の20件をURLにセットする
         setUrl(data.next);
       })
   }
 
-  const createPokemonObject = () => {
-    fetch(pokemonUrl)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        // ポケモンの画像の場所
-        // - (ハイフン)にlintで自動で半角スペースが入ってしまうため、[]で対応
-        console.log(data.sprites.other["official-artwork"].front_default);
-        // ポケモンのタイプの場所
-        console.log(data.types[0].type.name);
-      })
+  const createPokemonObject = (results) => {
+
+    results.forEach(pokemon => {
+      const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+      fetch(pokemonUrl)
+        .then(res => res.json())
+        .then(data => {
+          const image = data.sprites.other["official-artwork"].front_default;
+          const type = data.types[0].type.name;
+          console.log(data.name, image, type);
+        })
+    })
   }
 
   useEffect(() => {
     getAllPokemons();
-    createPokemonObject();
   }, [])
 
   return (
