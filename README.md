@@ -35,8 +35,22 @@ pokeAPI から fetch()で取得したデータを
 
 # STEP6
 
-API から取得したデータで、state を更新する  
-useState()を使用
+map()関数で繰り返し処理  
+戻り値を`return`しないと描画させないので、  
+{} 波括弧で処理内容を囲わないこと！
+() 括弧で囲う
+
+```javascript
+// OK!
+map( (element, index) => (
+  // 処理内容
+));
+
+// NG!
+map( (element, index) => {
+  // 処理内容
+});
+```
 
 # STEP7
 
