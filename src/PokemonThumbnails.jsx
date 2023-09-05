@@ -1,8 +1,7 @@
 import React from "react";
 
 const PokemonThumbnails = ({ id, name, image, type }) => {
-  // 仮で草タイプのクラス(grass)を入れておく
-  const style = "thumb-container grass";
+  const style = `thumb-container ${type}`;
 
   return (
     <div className={style}>
