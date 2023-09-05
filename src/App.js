@@ -60,6 +60,9 @@ function App() {
             />
           ))}
         </div>
+        <button className='load-more' onClick={getAllPokemons}>
+          もっとみる！
+        </button>
       </div>
     </div>
   );
