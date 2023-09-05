@@ -4,7 +4,7 @@ import PokemonThumbnails from './PokemonThumbnails';
 
 function App() {
 
-  const [pokemonNames, setPokemonNames] = useState([]);
+  const [allPokemons, setAllPokemons] = useState([]);
 
   // 仮でデータを作成する
   // 複数形pokemons に修正
@@ -27,20 +27,18 @@ function App() {
   ]
 
   // APIからデータを取得する
-  const url = "https://pokeapi.co/api/v2/pokemon";
+  // パラメータにlimitを設定し、20件取得する
+  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
 
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        // 仮で３つのポケモンの名前をセットする
-        // 複数形に修正
-        const names = [
-          data.results[0].name,
-          data.results[1].name,
-          data.results[2].name,
-        ]
-        setPokemonNames(names);
+        console.log(data.results)
+        setAllPokemons(data.results);
+
+        // 次の20件をURLにセットする
+        setUrl(data.next);
       })
   }, [])
 
@@ -52,7 +50,8 @@ function App() {
           {pokemons.map((pokemon, index) => (
             <PokemonThumbnails
               id={pokemon.id}
-              name={pokemonNames[index]}
+              // 初回レンダリングの際にエラーになるので、オプショナルチェーン(?)をつける
+              name={allPokemons[index]?.name}
               image={pokemon.image}
               type={pokemon.type}
               key={index}
