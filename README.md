@@ -18,23 +18,24 @@ create-react-app で環境構築！
 # STEP3
 
 CSS を実装する。
-今回は、完成品の CSS をコピペする。
+今回は、完成品の CSS をコピペする。  
 ※クラス名が間違っていないか確認すること
 
 # STEP4
 
-pokeAPI からデータを fetch()で取得
-useEffect() を使用する
+pokeAPI からデータを fetch()で取得  
+useEffect() を使用する  
 console.log で取得したデータを確認
 
 # STEP5
 
-pokeAPI から fetch()で取得したデータを
+useState()で状態管理する  
+pokeAPI から fetch()で取得したデータを  
 画面に表示させる
 
 # STEP6
 
-API から取得したデータで、state を更新する
+API から取得したデータで、state を更新する  
 useState()を使用
 
 # STEP7
