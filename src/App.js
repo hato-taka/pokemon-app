@@ -21,12 +21,12 @@ function App() {
         createPokemonObject(data.results);
       })
       .finally(() => {
+        allPokemons.sort((a, b) => a.id - b.id)
         setIsLoading(false);
       })
   }
 
   const createPokemonObject = (results) => {
-
     results.forEach(pokemon => {
       const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
       fetch(pokemonUrl)
