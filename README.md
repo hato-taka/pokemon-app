@@ -84,9 +84,9 @@ sort() で番号順に並び替える
 
 # STEP14
 
-ポケモンの名前・タイプを日本語に変換
-※develop/step16 に修正版
-f47b418
+ポケモンの名前・タイプを日本語に変換  
+※develop/step16 に修正版  
+commit f47b4186c1b1fc9ff70d8ebbbfc7fba602f6408d
 
 # STEP15
 
