@@ -54,8 +54,74 @@ map( (element, index) => {
 
 # STEP7
 
-「もっと見る」ボタンの追加
+createPokemonObject()の作成  
+個別のポケモンのデータを１つ１つ取得
 
 # STEP8
 
-loading 画面の追加
+forEach() で 1 つ 1 つのポケモンの
+名前・画像・タイプを取得
+
+# STEP9
+
+API から取得したポケモンのデータを画面に表示させる
+
+# STEP10
+
+「もっとみる！」ボタンの追加
+
+# STEP11
+
+ローディング中の表示の追加
+
+# STEP12
+
+ポケモンのアイコン画像の追加
+
+# STEP13
+
+sort() で番号順に並び替える
+
+# STEP14
+
+ポケモンの名前・タイプを日本語に変換
+※develop/step16 に修正版
+f47b418
+
+# STEP15
+
+firebase でデプロイ
+
+参考記事:  
+[Firebase でデプロイしよう！](https://qiita.com/hiroki-harada/items/ca22ac177db68e3c3796)
+
+1. Firebase のプロジェクトを作成
+2. パッケージのインストール
+
+```shell
+npm install -g firebase-tools
+npm install --save firebase
+```
+
+3. firebase に login
+
+```shell
+firebase login
+```
+
+4. プロジェクトを初期化
+
+```shell
+firebase init
+```
+
+スペースキーで「Hosting」を選択して、Enter  
+「Use an existing project」を選択  
+`What do you want to use as your public directory? (public)` => `build` と入力  
+`Configure as a single-page app (rewrite all urls to /index.html)?` `No`で大丈夫(多分`Yes`でも大丈夫)
+
+5. デプロイする
+
+```shell
+firebase deploy
+```
