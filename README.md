@@ -6,18 +6,18 @@ create-react-app で環境構築！
 
 # STEP1
 
-コンポーネントを作ろう！
+コンポーネントを作ろう！  
 `<PokemonThumbnails/>`コンポーネントを作る
 
 # STEP2
 
-子コンポーネントに props を渡そう！
+子コンポーネントに props を渡そう！  
 `<App>` コンポーネントから`<PokemonThumbnails>`コンポーネントに props でデータを渡す
 渡すデータは、この段階では固定値で渡す
 
 # STEP3
 
-CSS を実装する。
+CSS を実装する。  
 今回は、完成品の CSS をコピペする。  
 ※クラス名が間違っていないか確認すること
 
