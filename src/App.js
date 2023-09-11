@@ -23,9 +23,16 @@ function App() {
         createPokemonObject(data.results);
       })
       .finally(() => {
-        allPokemons.sort((a, b) => a.id - b.id)
+        // allPokemons.sort((a, b) => a.id - b.id)
         setIsLoading(false);
       })
+    loaded();
+  }
+
+  const loaded = () => {
+    window.addEventListener('load', () => {
+      console.log("load")
+    })
   }
 
   const createPokemonObject = (results) => {
@@ -48,7 +55,7 @@ function App() {
             jpType: japanese.type
           }
           // 既存のデータを展開し、新しいデータを追加する
-          setAllPokemons(currentList => [...currentList, newList]);
+          setAllPokemons(currentList => [...currentList, newList].sort((a, b) => a.id - b.id));
         })
     })
   }
@@ -58,7 +65,6 @@ function App() {
       (pokemon) => pokemon.en.toLowerCase() === name
     ).ja;
     const jpType = await pokemonTypeJson[type];
-    console.log(jpType)
     return { name: jpName, type: jpType };
   }
 
