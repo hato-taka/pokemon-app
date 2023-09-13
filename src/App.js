@@ -26,13 +26,6 @@ function App() {
         // allPokemons.sort((a, b) => a.id - b.id)
         setIsLoading(false);
       })
-    loaded();
-  }
-
-  const loaded = () => {
-    window.addEventListener('load', () => {
-      console.log("load")
-    })
   }
 
   const createPokemonObject = (results) => {
