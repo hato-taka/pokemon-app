@@ -23,17 +23,10 @@ function App() {
         createPokemonObject(data.results);
       })
       .finally(() => {
-        // allPokemons.sort((a, b) => a.id - b.id)
         setIsLoading(false);
       })
-    loaded();
   }
 
-  const loaded = () => {
-    window.addEventListener('load', () => {
-      console.log("load")
-    })
-  }
 
   const createPokemonObject = (results) => {
     results.forEach(pokemon => {
@@ -55,7 +48,7 @@ function App() {
             jpType: japanese.type
           }
           // 既存のデータを展開し、新しいデータを追加する
-          setAllPokemons(currentList => [...currentList, newList].sort((a, b) => a.id - b.id));
+          setAllPokemons(currentList => [...currentList, newList]);
         })
     })
   }
@@ -77,7 +70,7 @@ function App() {
       <h1>ポケモン図鑑</h1>
       <div className='pokemon-container'>
         <div className='all-container'>
-          {allPokemons.map((pokemon, index) => (
+          {allPokemons.sort((a, b) => a.id - b.id).map((pokemon, index) => (
             <PokemonThumbnails
               id={pokemon.id}
               name={pokemon.name}
